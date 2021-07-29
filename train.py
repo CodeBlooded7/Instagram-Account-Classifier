@@ -13,7 +13,7 @@ def plot_graphs(history, string):
 
 class myCall(tf.keras.callbacks.Callback):
     def on_epoch_end(self, epoch, logs={}):
-        if(logs.get('loss')<0.5):
+        if(logs.get('val_loss')<0.5):
             self.model.stop_training = True
 
 
